@@ -61,7 +61,7 @@ function App() {
           </Route>
         </Routes> */}
         <TextForm showAlert={showAlert} heading="Enter your text to Analyse below" mode={mode}/>
-        {/* <About/> */}
+        <About/>
       </div>
     {/* </Router> */}
     </>
