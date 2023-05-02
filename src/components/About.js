@@ -1,34 +1,36 @@
 import React, {useState} from 'react'
 
-export default function About() {
-    const [BtnText, setBtnText] = useState("Enable Dark Mode")
+export default function About(props) {
+    // const [BtnText, setBtnText] = useState("Enable Dark Mode")
+    // const [myStyle, setMyStyle] = useState({
+    //     color: 'black',
+    //     backgroundColor: 'white'
+    // })
+    // const toggleStyle = ()=>{
+    //     if(myStyle.color === 'black'){
+    //         setMyStyle({
+    //             color: 'white',
+    //             backgroundColor: 'black'
+    //         })
+    //         setBtnText("Enable Light Mode")
+    //     }
+    //     else{
+    //         setMyStyle({
+    //             color: 'black',
+    //             backgroundColor: 'white'
+    //         })
+    //         setBtnText("Enable Dark Mode")
+    //     }
+    // }
 
-    const [myStyle, setMyStyle] = useState({
-        color: 'black',
-        backgroundColor: 'white'
-    })
-
-    const toggleStyle = ()=>{
-        if(myStyle.color === 'black'){
-            setMyStyle({
-                color: 'white',
-                backgroundColor: 'black'
-            })
-            setBtnText("Enable Light Mode")
-        }
-        else{
-            setMyStyle({
-                color: 'black',
-                backgroundColor: 'white'
-            })
-            setBtnText("Enable Dark Mode")
-        }
+    let myStyle = {
+        color: props.mode === 'dark'? 'white':'#08294e',
+        backgroundColor: props.mode === 'dark'? 'rgb(20 60 105)':'white'        
     }
 
     return (
-        <div className='container' style={myStyle}>
+        <div className='container' style={{color: props.mode === 'dark'? 'white':'#08294e'}}>
             <h1 className="my-5">About Us</h1>
-
             <div className="accordion" id="accordionExample" style={{borderRadius:'5px'}}>
                 <div className="accordion-item">
                     <h2 className="accordion-header">
@@ -67,9 +69,9 @@ export default function About() {
                     </div>
                 </div>
             </div>
-            <div>
+            {/* <div>
                 <button className="btn btn-primary my-3 mx-1" onClick={toggleStyle}>{BtnText}</button>
-            </div>
+            </div> */}
         </div>
     )
 }

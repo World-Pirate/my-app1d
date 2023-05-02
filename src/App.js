@@ -60,8 +60,8 @@ function App() {
           <Route exact path="/" element={<TextForm showAlert={showAlert} heading="Enter your text to Analyse below" mode={mode}/>}> 
           </Route>
         </Routes> */}
-        <TextForm showAlert={showAlert} heading="Enter your text to Analyse below" mode={mode}/>
-        <About/>
+        <TextForm showAlert={showAlert} heading="Try TextUtils - Word Counter, Character Counter, Remove Extra Spaces" mode={mode}/>
+        <About mode={mode}/>
       </div>
     {/* </Router> */}
     </>
