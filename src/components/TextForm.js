@@ -30,9 +30,11 @@ export default function TextForm(props){
     }
 
     const handleCopy = ()=>{
-        var copytext = document.getElementById('myBox');
-        copytext.select();
-        navigator.clipboard.writeText(copytext.value);
+        // var copytext = document.getElementById('myBox');
+        // copytext.select();
+        // navigator.clipboard.writeText(copytext.value);
+        // document.getSelection().removeAllRanges();
+        navigator.clipboard.writeText(text);
         props.showAlert('Copied text successfully', 'success')
     }
 
@@ -71,7 +73,7 @@ export default function TextForm(props){
 
             <div className="container my-3">
                 <h2>Your text summary</h2>
-                <p>{text.split(" ").filter((element) => element.length!==0).length} words and {text.length} characters are present in your text</p>
+                <p>{text.split(/\s+/).filter((element) => element.length!==0).length} words and {text.length} characters are present in your text</p>
                 <p>{0.008 * text.split(" ").filter((element) => element.length!==0).length} Minutes required to read your text</p>
                 <h2>Preview</h2>
                 <p>{text.length>0 ? text:'Nothing to preview'}</p>
